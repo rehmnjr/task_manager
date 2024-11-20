@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/index.css" />
+
+    <script type="module">
+        import { navbar, handleNavbarLogic } from './components/navbar.js';
+        document.querySelector('#nav').innerHTML = navbar();
+        handleNavbarLogic();
+    </script>
+</head>
+
+<body style="background-color: #F0F1F2;">
+    <nav id="nav"></nav>
+    <main class="dashboard">
+        <div id="floating-window"></div>
+        <div class="dashboard-header">
+            <h2 class="dashboard-header-left">Your Task</h2>
+            <button onclick="openAddTaskPop()">
+                <i class="fa-solid fa-plus"></i>
+                <p> Add Task</p>
+            </button>
+        </div>
+
+        <div class="dashboard-body">
+            <div class="body-task">
+                <h3>To-do</h3>
+                <div class="window to-do"></div>
+            </div>
+            <div class="body-task">
+                <h3>In-Progress</h3>
+                <div class="window in-progress"></div>
+            </div>
+            <div class="body-task">
+                <h3>Completed</h3>
+                <div class="window completed"></div>
+            </div>
+        </div>
+    </main>
+    <script src="./scripts/popUp.js"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
