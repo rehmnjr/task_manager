@@ -3,14 +3,60 @@
 
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/auth/login",
         "methods":[
-          "GET","POST","PUT","DELETE"
+          "POST"
+        ],
+
+        "dest": "/src/server.js"
+      },
+  
+      {
+        "src": "/auth/register",
+        "methods":[
+          "POST"
         ],
         
         "dest": "/src/server.js"
       },
-  
+      
+      {
+        "src": "/tasks",
+        "methods":[
+          "GET"
+        ],
+        
+        "dest": "/src/server.js"
+      },
+
+      {
+        "src": "/tasks/create",
+        "methods":[
+          "POST"
+        ],
+        
+        "dest": "/src/server.js"
+      },
+
+      {
+        "src": "/tasks/update",
+        "methods":[
+          "PUT"
+        ],
+        
+        "dest": "/src/server.js"
+      },
+
+
+      {
+        "src": "/tasks/delete",
+        "methods":[
+          "DELETE"
+        ],
+        
+        "dest": "/src/server.js"
+      },
+      
       {
         "src": "/(.*)",
         "dest": "/public/index.html"
