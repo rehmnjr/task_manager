@@ -58,7 +58,7 @@ async function getAllTasks() {
     const authToken = document.cookie.split('; ').find(row => row.startsWith('authToken='))?.split('=')[1];
 
     try {
-        const response = await fetch('/tasks', {
+        const response = await fetch('/api/tasks', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

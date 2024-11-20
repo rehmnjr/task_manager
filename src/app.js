@@ -20,7 +20,7 @@ app.use((_req, res, next) => {
 });
 
 // Routes
-app.use('/auth', authRoutes);
-app.use('/tasks', taskRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
 
 module.exports = app;

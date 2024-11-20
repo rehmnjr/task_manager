@@ -70,7 +70,7 @@ async function createTask(task) {
 
         const authToken = document.cookie.split('; ').find(row => row.startsWith('authToken='))?.split('=')[1];
 
-        const response = await fetch('/tasks/create', {
+        const response = await fetch('/api/tasks/create', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', "Authorization": `Bearer ${authToken}` },
             body: JSON.stringify(task),
@@ -104,7 +104,7 @@ async function updateTask(taskId, task) {
 
     try {
         // Make the PUT request to update the task
-        const response = await fetch(`/tasks/update/${taskId}`, {
+        const response = await fetch(`/api/tasks/update/${taskId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ async function deleteTask(taskId) {
     const authToken = document.cookie.split('; ').find(row => row.startsWith('authToken='))?.split('=')[1];
     try {
         // Make the DELETE request to delete the task
-        const response = await fetch(`/tasks/delete/${taskId}`, {
+        const response = await fetch(`/api/tasks/delete/${taskId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
